@@ -25,6 +25,7 @@ public class Principal {
 
         System.out.println(menu);
         Scanner teclado = new Scanner(System.in);
+        DivisaApi convertir = new DivisaApi();
         int opcion = 0;
         double cantidad ;
         while (opcion != 7) {
@@ -33,10 +34,11 @@ public class Principal {
                 case 1:
                     System.out.println("Ingrese le monto a convertir:");
                     cantidad = teclado.nextDouble();
+                    Divisa resultado = convertir.ConvertirDivisa("USD","ARS", cantidad);
+                    System.out.println(resultado.conversion_rate());
                     break;
                 case 2:
                     System.out.println("Ingrese le monto a convertir:");
-                    cantidad = teclado.nextDouble();
                     break;
             }
 
